@@ -1,0 +1,93 @@
+Assignment 2 - jukebox - NOTES FROM THE LECTURE
+
+// find out about lcture 13 - lerning maerial on blackboard, write up program to read a file - 
+understand how it works 
+
+MEDIA file = CONFIGURATION FILE 
+// to do with genre and number of tracks within the genre 
+- text is the track and the number is the number of how many enteries. 
+always starts with 0 so that means the number will be higher in comparision
+with the track lists  // 
+
+Notes from the refined pseduo code:
+
+declaring the array 
+we use num gen to knoq how many list boxes we need 
+listarray declares the array 
+
+ListArray ListB [Num_gen] - to find out how many listboxes we need 
+the listbox is: ListBox Media_Library[Num_gen] 
+
+// Create an array of ListBox/es
+            Media_Library = new ListBox[Int_Number_of_Genre];
+            // creates an array of the listboxes
+            Media_Library[Genre] = new ListBox();
+            // the list box to the array above
+            ListBox Media_Library[Int_Number_of_Genre];
+
+
+            // we use "num gen" to know how many list boxes we need
+            Number_Genre = Readline();
+
+            ListBox Media_Library[Num_gen]; // The list box 
+            Array List[Num_Gen]; // to find out how many listboxes we need 
+
+
+
+
+
+
+the loop: 
+For Gen = 1 to Num_gen //  
+	Create ListB[Gen] = New ListB // creates the listbox itself
+ Media_Library[Gen] = New Listbox () 
+
+	Num_track = Readline
+	ListB[Gen].Item.Add = ReadLine // add the title 
+	For Track = 1 to Num_track  // add first track 
+		ListB(Gen).Item.Add = ReadLine //  adds it by reading the media confi file
+
+	Next // loops
+Next // loops
+
+
+// to do with jukebox 
+
+Sequential Play (Playlist)
+intervals between the songs timers e.g. 3000 = 3 seconds 
+continious trigger to play the songs through the playlist
+
+
+TIMER:
+When playing a track 
+
+Timer.1Enabled = False
+
+Finshed playing = handler 
+
+MyMediaPlayer.PlayStateChange // tells us the present track has just stopped playing
+If MyMediaPlayer.playState = WMPLib.WMPPlayState.wmppsStopped
+Then
+IsPlaying = False
+Timer.Enabled = 
+End If
+
+
+Within the timer.interval handler need to test the two:
+< If MyMediaPlayer.playState = WMPLib.WMPPlayState.wmppsStopped
+< If MyMediaPlayer.playState = WMPLib.WMPPlayState.wmppsPlaying Then
+	IsPlaying = True
+ElseIf MyMediaPlayer.playState = WMPLib.WMPPlayState.wmppsStopped
+Then
+Timer.Enabled = False
+Load_And_Play()
+End If
+
+About Dialog
+AboutForm.ShowDialog() // calls the about window
+
+set up window is the 20 mark / difficult bit 
+to do with import tracks etc 
+
+
+

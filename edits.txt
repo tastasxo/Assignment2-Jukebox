@@ -1,0 +1,12 @@
+edits of assignment 
+
+// include the class to enable read and write to disk functions
+        // shouldn't be here Imports System.IO; // 
+        // Holds the number of Genre, which becomes the number of columns in the array 
+        public int Int_Number_of_Genre;
+        // Create memory allocation for an array of the ListBox/es 
+        ListBox[] Media_Library;
+        // Tells the JukeBox it is, or not, Playing 
+        bool IsPlaying = false;
+        // gets us the location from application where it begins
+        string line_of_text;

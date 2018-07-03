@@ -1,0 +1,154 @@
+Assignment " Juke Box " Notes - 27/06/18
+
+(task no.1)[10 marks]
+Gui interface - done 
+
+(task no.2)[5 marks]
+Arrays - multiple needed
+simple array?
+
+
+
+ // int[,] genre = new int[3, 4]; // 3 = rows, 4 = columns. Max no. of row and column elements
+2d string array to contain info required by the jukebox app about genre 
+
+//declaring the 2d array // notes from the array powerpoint // 
+
+bool [,] Media_Library = new bool [6,6] // max rows and column elements 
+for (int row = 0; row <=6; row++) // for the row that = 0, row less than or equal to 3, row increments its operhand by 1
+
+for (int column = 0; column<=6; column++)
+{
+// if statments 
+	if ((column == 0) && (row ==0)
+	Media_Library{row,column]=true;
+else
+	if(column > 0)
+		if(Media_Library[row,column -1]==true)
+		Media_Library[row,column] =false;
+else
+	Media_Library[row,column]=true;
+if(row > 0)
+	if(Media_Library[row-1,column]==true)
+	Media_Library[row,column]=false;
+else
+	Media_Library[row,column]=true;
+	}	
+}
+displaying results/ changing it from boolean to display in listbox
+for (int column = 0; column<=6; column++)
+{
+for (int column = 0; column<=6; column++)
+{
+if(Media_Library[row,column]==true)
+if(column == 6)
+	listbox_display.appendlist("1" + Enviornment.NewLine);
+else
+	listbox_display.appendlist("1");
+else
+if (column==6)
+listbox_display.appendlist("0"+ Environment.NewLine);
+else
+listbox_display.appendlist("0");
+	}
+}
+
+AMENDED VERSION FROM VISUAL STUDIO 
+//declaring the 2d array 
+            bool[,] Media_Library = new bool[6, 6]; // max rows and column elements 
+for (int row = 0; row <= 6; row++) // for the row that = 0, row less than or equal to 3, row increments its operhand by 1
+
+                for (int column = 0; column <= 6; column++)
+                {
+                    // if statments 
+                    if ((column == 0) && (row == 0))
+                        Media_Library[row,column]= true;
+else
+	if (column > 0)
+                            if (Media_Library[row, column - 1] == true)
+                                Media_Library[row, column] = false;
+                            else
+                                Media_Library[row, column] = true;
+                        if (row > 0)
+                            if (Media_Library[row - 1, column] == true)
+                                Media_Library[row, column] = false;
+                            else
+                                Media_Library[row, column] = true;
+                    }
+            // displaying results/ changing it from boolean to display in listbox
+
+            for (int column = 0; column <= 6; column++)
+
+            {
+                for (int Column = 0; column <= 6; column++)
+                {
+                    int Row = 0;
+                    if (Media_Library[Row, column] == true)
+                        if (column == 6)
+                            Media_Library.Append("1" + Environment.NewLine);
+                        else
+                            Media_Library.Insert("1");
+                    else
+                    if (column == 6)
+                        Media_Library.appendlist("0" + Environment.NewLine);
+                    else
+                        Media_Library.appendlist("0");
+                }
+            }
+// struggling //
+
+(task no.3) [20 marks]
+File reading - Genre Title & Tracks
+into one of the arrays in task 2 
+This information has been produced with the help of lecture 13 slides 
+// Include the Class to enable Read and Write to Disk functions 
+
+Imports System.IO;
+
+    // Gets the string of the path to the media files for the application
+ public string StrApplicationMediaPath = Directory.GetCurrentDirectory();
+
+    public int Int_Number_of_Genre;
+    // Create memory allocation for an array of the ListBox/es 
+    ListBox[] Media_Library;
+    // Tells the JukeBox it is, or not, Playing 
+    bool IsPlaying = false;
+
+
+
+        // gets us the location from application where it begins
+        string line_of_text;
+        // Gets the string of the path to the media files for the application 
+        public string StrApplicationMediaPath = Directory.GetCurrentDirectory();
+        // Creates a file on the HDD at the Application_Path location called "/Media.txt"
+        StreamReader My_Input_Stream = File.OpenText(StrApplicationMediaPath + "Media.txt");
+        // get a line of text from the file 
+        line_Of_Text = My_Input_Stream.ReadLine();
+            while (line_of_text !=null);
+            {
+            // get the line of text from the file 
+            txt_Pad.AppendText(line_of_text + Environment.newLine);
+            line_of_text = My_Input_Stream.ReadLine();
+            }
+         // this closes the file
+            My_Input_Stream.Close();
+
+(task no.4) [5 marks]
+double click = copy into playlist
+
+(task no.5) [15 marks]
+Contents of playlist 
+5a) move 1st item to present & plays track
+5b) make jukebox wait until present track finishes then move first item in list of
+playlist to presently playing textbox & play track
+
+(task no.6) [5 marks]
+horizontal scroll bar on select genre
+
+(task no.7) [10 marks] - think ive done this??
+functional activities
+7a) setup interface
+7b) about interface
+
+
+
